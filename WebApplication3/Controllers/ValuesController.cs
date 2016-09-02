@@ -47,7 +47,7 @@ namespace WebApplication2.Controllers
 
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [System.Web.Http.HttpGet]
-        [Route("api/MyPing")]
+        [Route("api/MyPingTest")]
         public async Task<HttpResponseMessage> MyPing(HttpRequestMessage request)
 
         {
@@ -57,7 +57,7 @@ namespace WebApplication2.Controllers
 
             //Json bob = JsonConvert.SerializeObject(request.GetQueryNameValuePairs());
             
-            KeyValuePair<string, string> keyvalues = new KeyValuePair<string, string>();
+            //KeyValuePair<string, string> keyvalues = new KeyValuePair<string, string>();
             //keyvalues = request.GetQueryNameValuePairs();
 
             // can not hanndle duplicate keys!!             var queryString = request.GetQueryNameValuePairs().ToDictionary (x => x.Key, x => x.Value);
