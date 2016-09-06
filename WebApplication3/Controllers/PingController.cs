@@ -7,11 +7,13 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using WebApplication3.Other;
 
 namespace mvc6.Controllers
 {
     public class PingController : ApiController
     {
+        [Action1DebugActionWebApiFilter]
         [System.Web.Http.AcceptVerbs("GET", "POST")]
         [Route("api/MyPing")]
         public async Task<HttpResponseMessage> MyPing(HttpRequestMessage request)

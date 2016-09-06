@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using WebApplication3.Other;
 
 namespace WebApplication3
 {
@@ -16,6 +17,8 @@ namespace WebApplication3
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            config.Filters.Add(new CustomExceptionFilter());
+           // config.Filters.Add(new Action1DebugActionWebApiFilter());
 
             // Web API routes
             config.MapHttpAttributeRoutes();
