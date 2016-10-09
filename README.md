@@ -1,2 +1,2 @@
-# NGnBoot
-contains AngularJS 1, html5, bootstrap woo hoo.
+# NGnBoot - Angular and bootstrap.
+contains AngularJS 1, html5, bootstrap woo hoo!!!
