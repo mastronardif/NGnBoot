@@ -21,6 +21,12 @@ namespace WebApplication3.Controllers
             return View("myhtml");
         }
 
+        public ActionResult homelessAds()
+        {
+            var result = new FilePathResult("~/Views/Home/homelessad.html", "text/html");
+            return result;
+        }
+
         // /home/mybootstrap
         public ActionResult mybootstrap()
         {

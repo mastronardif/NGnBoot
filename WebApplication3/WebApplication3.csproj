@@ -1049,6 +1049,8 @@
     <Content Include="Scripts\my\myapp.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\Home\homelessad.html" />
+    <Content Include="Views\Home\marketing.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1066,6 +1068,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\mybootstrap.cshtml" />
+    <Content Include="Views\Home\homelessad.cshtml" />
     <None Include="Views\Home\myhtml.cshtml" />
   </ItemGroup>
   <ItemGroup>
