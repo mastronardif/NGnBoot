@@ -1068,7 +1068,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Home\mybootstrap.cshtml" />
-    <Content Include="Views\Home\homelessad.cshtml" />
     <None Include="Views\Home\myhtml.cshtml" />
   </ItemGroup>
   <ItemGroup>
