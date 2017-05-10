@@ -1,0 +1,5 @@
+#mydiv 
+{ padding: 3px; border: 1px solid black; 
+  color:blue; background-color: yellow;
+}
+.background { background-color: blue; padding: 0; color: blue; }
