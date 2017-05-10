@@ -2,7 +2,7 @@
 /*!
  *  myemail01.js 
  */
- alert('myXXXXXXXXXXXXXX.js');
+ //alert('myemail01.js');
 var mycmd22 = (function() {
 
    // private property
@@ -29,7 +29,7 @@ var mycmd22 = (function() {
             //return sum;
         },
 
-  FUCKopenMailFromServer:function(divId, srcIds, id) {
+  openMailFromServer:function(divId, srcIds, id) {
       console.log('openMailFromServer '); //return;
   //fillDivBuf('FU');
   //_privateListIds(srcIds);
