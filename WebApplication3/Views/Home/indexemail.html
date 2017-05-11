@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
-<title>WF Dog Walkers</title>
+<title>Homeless Billboards</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -26,13 +26,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-white w3-animate-left w3-card-2" style="z-index:3;width:320px;" id="mySidebar">
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom w3-large">
-  <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQjQopFgn149jjm6nWuEa0Gj7bQZp_gcW78h98fIfpkgU0DvJ2DO_ELlqHT" style="width:60%;"></a>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFMwG5i8_VIOgro5kFNQFrDi7yj4JLpmDzZF0WDPOdr4gK5Xe5EQ" 
+       
+       style="width:60%;"></a>
   <a href="javascript:void(0)" onclick="w3_close()" title="Close Sidemenu" 
   class="w3-bar-item w3-button w3-hide-large w3-large">Close <i class="fa fa-remove"></i></a>
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-dark-grey w3-button w3-hover-black w3-left-align" onclick="document.getElementById('id01').style.display='block'">New Message <i class="w3-padding fa fa-pencil"></i></a>
   <a id="myBtn" onclick="myFunc('Demo1')" href="javascript:void(0)" class="w3-bar-item w3-button"><i class="fa fa-inbox w3-margin-right">
-      </i>Inbox (7)<i class="fa fa-caret-down w3-margin-left"></i></a>
+      </i>Inbox (5)<i class="fa fa-caret-down w3-margin-left"></i></a>
+
   <div id="Demo1" class="w3-hide w3-animate-left">
+
+      <!--
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" 
       onclick="openMail('Borge');w3_close();" id="firstTab">
       <div class="w3-container">
@@ -40,12 +45,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
         <h6>Subject: What we do</h6>
       </div>
     </a>
+      -->
+
      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="openMail('Jane');w3_close();">
       <div class="w3-container">
         <img class="w3-round w3-margin-right" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSZE2zITwnW89kgYhqlS-BTp3OgvIyRC9taHTOjrRa-WDkTk4u8" style="width:15%;"><span class="w3-opacity w3-large">Jane Doe</span>
         <p>Holy shit you gota see this...</p>
       </div>
     </a>
+
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="openMail('John');w3_close();">
       <div class="w3-container">
         <img class="w3-round w3-margin-right" src="data:image/jpeg;base64,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" style="width:15%;"><span class="w3-opacity w3-large">John Doe</span>
@@ -56,8 +64,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
       <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" 
              onclick="openMailFromServer22('FU_MARKETING');w3_close();">
       <div class="w3-container">
-        <img class="w3-round w3-margin-right" src="/w3images/avatar2.png" style="width:15%;"><span class="w3-opacity w3-large">FU</span>
-        <p>FU_MARKETING</p>
+        <img class="w3-round w3-margin-right" src="/w3images/avatar2.png" style="width:15%;">
+          <span class="w3-opacity w3-large">Hows this work</span>
+        <p>MARKETING</p>
       </div>
     </a>
 
@@ -74,8 +83,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
       <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" 
              onclick="openMailFromServer22('FU_BASIC');w3_close();">
       <div class="w3-container">
-        <img class="w3-round w3-margin-right" src="/w3images/avatar2.png" style="width:15%;"><span class="w3-opacity w3-large">FU</span>
-        <p>FU_BASIC</p>
+        <img class="w3-round w3-margin-right" src="/w3images/avatar2.png" style="width:15%;">
+          <span class="w3-opacity w3-large">Big City</span>
+        <p>Sponsor an HL</p>
       </div>
     </a>
 <!-- for each end -->    
@@ -83,11 +93,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" 
              onclick="openMailFromServer22('FU');w3_close();">
       <div class="w3-container">
-        <img class="w3-round w3-margin-right" src="/w3images/avatar2.png" style="width:15%;"><span class="w3-opacity w3-large">FU</span>
+        <img class="w3-round w3-margin-right" src="/w3images/avatar2.png" style="width:15%;">
+          <span class="w3-opacity w3-large">NYC</span>
         <p>Homeless Billboards!</p>
       </div>
     </a>
 
+      <!-- Read from another server use in the future. 
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" 
               onclick="openMailFromServerCORS('FU');w3_close();">
       <div class="w3-container">
@@ -95,6 +107,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
         <p>Read from server(CORS)!</p>
       </div>
     </a>
+          -->
 
  
   </div>
