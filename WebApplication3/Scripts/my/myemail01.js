@@ -37,18 +37,32 @@ var mycmd22 = (function() {
   //myArray.find(x => x.id === '45').foo
   
   var item = srcIds.find(x => x.id === id);
-  console.log("ZZZZZZZZZZ item = ", item);
+  console.log("FFF item = ", item);
   console.log("item.path = ", item.path);
   // clear selections begin
    var x = document.getElementsByClassName("person");
     for (i = 0; i < x.length; i++) {
        x[i].style.display = "none";
-    }
+   }
+
     x = document.getElementsByClassName("test");
     for (i = 0; i < x.length; i++) {
-       x[i].className = x[i].className.replace(" w3-light-grey", "");
+        console.log(i, "x[i].className = ", x[i].className);
+        x[i].style.background = '';
+        //console.log(i, "x[i].innerHTML = ", x[i].innerHTML);
+
+        //;//  [i].className = x[i].className.replace(" w3-light-grey", "");
+        //[i].className = x[i].className.replace("w3-light-grey", " w3-light-green");
     }
 
+    x = document.getElementById(id);
+    if (x) {
+        x.style.background = 'lightgrey';
+    }
+    
+
+    //var x = document.getElementById('FU_WHOWEARE');
+    
 
     // clear selections end
 
