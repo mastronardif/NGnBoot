@@ -30,15 +30,15 @@ var mycmd22 = (function() {
         },
 
   openMailFromServer:function(divId, srcIds, id) {
-      console.log('openMailFromServer '); //return;
+      //console.log('openMailFromServer '); //return;
   //fillDivBuf('FU');
   //_privateListIds(srcIds);
 
   //myArray.find(x => x.id === '45').foo
   
   var item = srcIds.find(x => x.id === id);
-  console.log("FFF item = ", item);
-  console.log("item.path = ", item.path);
+  //console.log("FFF item = ", item);
+  //console.log("item.path = ", item.path);
   // clear selections begin
    var x = document.getElementsByClassName("person");
     for (i = 0; i < x.length; i++) {
@@ -47,7 +47,7 @@ var mycmd22 = (function() {
 
     x = document.getElementsByClassName("test");
     for (i = 0; i < x.length; i++) {
-        console.log(i, "x[i].className = ", x[i].className);
+        //console.log(i, "x[i].className = ", x[i].className);
         x[i].style.background = '';
         //console.log(i, "x[i].innerHTML = ", x[i].innerHTML);
 

@@ -1046,6 +1046,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\my\my.js" />
     <Content Include="Scripts\my\myapp.js" />
     <Content Include="Scripts\my\myemail01.js" />
     <Content Include="Scripts\respond.js" />

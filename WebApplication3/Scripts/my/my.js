@@ -2,7 +2,7 @@
 /*!
  *  my.js 
  */
- alert('my.js');
+ //alert('my.js');
  var mycmd = (function() {
     // your module code goes here
     var sum = 0 ;

@@ -255,28 +255,28 @@ function myFunc(id) {
 
     //openMail("Borge")
     openMailFromServer22("FU");
-function openMail(personName) {
+//function openMail(personName) {
 
-   fillDivBuf('FU');
+//   fillDivBuf('FU');
 
-    var i;
-    var x = document.getElementsByClassName("person");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    x = document.getElementsByClassName("test");
-    for (i = 0; i < x.length; i++) {
-       x[i].className = x[i].className.replace(" w3-light-grey", "");
-    }
+//    var i;
+//    var x = document.getElementsByClassName("person");
+//    for (i = 0; i < x.length; i++) {
+//       x[i].style.display = "none";
+//    }
+//    x = document.getElementsByClassName("test");
+//    for (i = 0; i < x.length; i++) {
+//       x[i].className = x[i].className.replace(" w3-light-grey", "");
+//    }
 
-    document.getElementById(personName).style.display = "block";
+//    document.getElementById(personName).style.display = "block";
 
-//var event = window.event;
-   // event.currentTarget.className += " w3-light-grey";
-}
+////var event = window.event;
+//   // event.currentTarget.className += " w3-light-grey";
+//}
 
 
-function openMailFromServer22(personName) {
+function openMailFromServer22(id) {
   var srcIds = [{"name": "name", "id" : "", "path": ""}, 
                 { "name": "Marketing", "id": "FU_MARKETING", "path": "./rootAds/marketing"},                
                 //{"name": "Signature Pad", "id": "FU_SIG", "path": "./indexsig.html"},
@@ -290,13 +290,7 @@ function openMailFromServer22(personName) {
                 {"name": "Won Ton Delivery", "id": "FU_WONTONDELIVERY", "path": "./index.html"}
                ];
 
-  var id = personName;
-  if ('FU_WONTONDELIVERY' === personName) {
-    id = 'FU_WONTONDELIVERY';
-  }
-
-    var divId = 'FU_';
-    
+    var divId = 'FU_';   
     mycmd22.openMailFromServer(divId, srcIds, id);  
 }
 
@@ -394,24 +388,24 @@ var HttpClient = function() {
     }
 }
 
-function fillDivBuf(divName) {
-  var objToday = new Date(),
-  weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
-  dayOfWeek = weekday[objToday.getDay()],
-  domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
-  dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
-  months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
-  curMonth = months[objToday.getMonth()],
-  curYear = objToday.getFullYear(),
-  curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
-  curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
-  curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
-  curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
-  var today = curHour + ":" + curMinute + "." + curSeconds + curMeridiem + " " + dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+//function REMOVEME___fillDivBuf(divName) {
+//  var objToday = new Date(),
+//  weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+//  dayOfWeek = weekday[objToday.getDay()],
+//  domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
+//  dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+//  months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+//  curMonth = months[objToday.getMonth()],
+//  curYear = objToday.getFullYear(),
+//  curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+//  curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+//  curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+//  curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+//  var today = curHour + ":" + curMinute + "." + curSeconds + curMeridiem + " " + dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
 
 
-  document.getElementById(divName).innerHTML = 'hi hey salmon hole. <br/>' + today;
-}
+//  document.getElementById(divName).innerHTML = 'hi hey salmon hole. <br/>' + today;
+//}
 
 </script>
 
