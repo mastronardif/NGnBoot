@@ -139,15 +139,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
     </div>
     <div class="w3-panel">
       <label>To</label>
-      <input class="w3-input w3-border w3-margin-bottom" type="text">
+      <input class="w3-input w3-border w3-margin-bottom" type="text" id="sendMailTo">
       <label>From</label>
-      <input class="w3-input w3-border w3-margin-bottom" type="text">
+      <input class="w3-input w3-border w3-margin-bottom" type="text" id="sendMailFrom">
       <label>Subject</label>
-      <input class="w3-input w3-border w3-margin-bottom" type="text">
-      <input class="w3-input w3-border w3-margin-bottom" style="height:150px" placeholder="What's on your mind?">
+      <input class="w3-input w3-border w3-margin-bottom" type="text" id="sendMailSubject">
+      <input class="w3-input w3-border w3-margin-bottom" style="height:150px" placeholder="What's on your mind?" id="sendMailBody">
       <div class="w3-section">
         <a class="w3-button w3-red" onclick="document.getElementById('id01').style.display='none'">Cancel  <i class="fa fa-remove"></i></a>
-        <a class="w3-button w3-light-grey w3-right" onclick="document.getElementById('id01').style.display='none'">Send  <i class="fa fa-paper-plane"></i></a> 
+        <a class="w3-button w3-light-grey w3-right" 
+           onclick="mycmd22.sendMail('sendId=123'); document.getElementById('id01').style.display='none'">Send  <i class="fa fa-paper-plane"></i></a> 
       </div>    
     </div>
   </div>

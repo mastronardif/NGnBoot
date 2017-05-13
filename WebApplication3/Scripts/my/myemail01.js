@@ -29,13 +29,30 @@ var mycmd22 = (function() {
             //return sum;
         },
 
-  openMailFromServer:function(divId, srcIds, id) {
-      //console.log('openMailFromServer '); //return;
-  //fillDivBuf('FU');
-  //_privateListIds(srcIds);
+        sendMail: function (id) {
+            // get subject
+            var sss = document.getElementById('sendMailSubject').value;
+            this.sendMailClear(id);
+            alert('sendMail: '+ sss);
+        },
+        sendMail00: function (id) {
+            // get subject
+            var sss = document.getElementById('sendMailSubject').value;
+            //alert('sendMail00: ' + id);
+            // config stuff
+            document.getElementById('sendMailTo').value = "tbd@gmail.com";
 
-  //myArray.find(x => x.id === '45').foo
-  
+            document.getElementById('sendMailSubject').value = "This is a test of the American Botasdcasting syste,m.! " + id;
+            document.getElementById('id01').style.display = 'block'
+        },
+        sendMailClear: function (id) {
+            // get subject
+            document.getElementById('sendMailFrom').value = '';
+            document.getElementById('sendMailSubject').value = '';
+            document.getElementById('sendMailBody').value = '';
+        },
+
+    openMailFromServer:function(divId, srcIds, id) {
   var item = srcIds.find(x => x.id === id);
   //console.log("FFF item = ", item);
   //console.log("item.path = ", item.path);
@@ -59,36 +76,15 @@ var mycmd22 = (function() {
     if (x) {
         x.style.background = 'lightgrey';
     }
-    
-
     //var x = document.getElementById('FU_WHOWEARE');
-    
-
     // clear selections end
+    
+    var url = item.path; 
 
-    // get from server
-var url = item.path; //'./index.html'; //'http://www.joeschedule.com/';
-//url = 'http://www.joeschedule.com/';
-
- // $.get(url, function(data, status){
- //            //alert("Data: " + data + "\nStatus: " + status);
- //            //console.log("Data: " + data + "\nStatus: " + status);
- //            //document.getElementById(personName).style.display = data;
- //            document.getElementById(personName).innerHTML = data; //'hi hey  hole. <br/>';
- //            document.getElementById(personName).style.display = "block";
- //        });
-
-//$.getJSON('http://anyorigin.com/go?url=http%3A//www.joeschedule.com/&callback=?', function(data){
-$.get(url, function(data){
-  //$('#output').html(data.contents);
-              document.getElementById(divId).innerHTML = data; //'hi hey  hole. <br/>';
-            document.getElementById(divId).style.display = "block";
-            //alert( "Data Loaded: " + data );
-
-});
-
-        // set
-    //document.getElementById(personName).style.display = "response";
+    $.get(url, function(data){
+        document.getElementById(divId).innerHTML = data; //'hi hey  hole. <br/>';
+        document.getElementById(divId).style.display = "block";
+    });
 }
 }
 }());
