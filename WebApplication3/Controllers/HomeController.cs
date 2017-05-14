@@ -21,6 +21,21 @@ namespace WebApplication3.Controllers
             return View("myhtml");
         }
 
+        public ActionResult letsDoThis(string id)
+        {
+            Console.WriteLine("id = {0}", id);
+            //var fn = "indexemail.html";
+            //if (!string.IsNullOrEmpty(id))
+            //{
+            //    fn = id + ".html";
+            //}
+            //var url = string.Format("~/Views/Home/{0}", fn);
+            //var result = new FilePathResult(url, "text/html");
+            //var result = new FilePathResult("~/Views/Home/indexemail.html", "text/html");
+            //return "Holly rart shit Robbin."//result;
+            var res = "{\"ass\": \"Holly rart shit Robbin.\"}";
+            return Content(res.ToString(), "application/json");
+        }
         public ActionResult rootAds(string id)
         {
             Console.WriteLine("id = {0}", id);

@@ -15,7 +15,26 @@ var mycmd22 = (function() {
 
     function findId(src) { 
     	return src.id === "FU_WONTONDELIVERY";
-	}
+    }
+
+    function sendShit(src) { 
+        var url = "./letsDoThis";
+        //alert(src);
+
+        //$.getJSON(url, function (data) {
+        //    console.log("data = ", data);    
+        //    //alert(data);
+        //});
+        console.log("get get"); // + result);
+
+        $.getJSON("./letsDoThis", function (result) {
+            console.log("result", result); // + result);
+            //alert(JSON.stringify(result) );
+            //$.each(result, function (i, field) {
+            //      console.log(field + " ");
+            //});
+        });
+    }
 
     _privateListIds = function(src, id){
     	console.log('src = '+ JSON.stringify(src) );
@@ -30,10 +49,9 @@ var mycmd22 = (function() {
         },
 
         sendMail: function (id) {
-            // get subject
-            var sss = document.getElementById('sendMailSubject').value;
+            var sss = document.getElementById('sendMailSubject').value;            
+            sendShit("wtf");
             this.sendMailClear(id);
-            alert('sendMail: '+ sss);
         },
         sendMail00: function (id) {
             // get subject
