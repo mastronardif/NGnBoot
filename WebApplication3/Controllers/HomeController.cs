@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication3.Other;
 
 namespace WebApplication3.Controllers
 {
@@ -23,7 +25,7 @@ namespace WebApplication3.Controllers
 
         public ActionResult letsDoThis(string id)
         {
-            Console.WriteLine("id = {0}", id);
+            Debug.WriteLine("id = {0}", id);
             //var fn = "indexemail.html";
             //if (!string.IsNullOrEmpty(id))
             //{
@@ -33,6 +35,11 @@ namespace WebApplication3.Controllers
             //var result = new FilePathResult(url, "text/html");
             //var result = new FilePathResult("~/Views/Home/indexemail.html", "text/html");
             //return "Holly rart shit Robbin."//result;
+
+            RestSharp.IRestResponse ir = MyMail.SendSimpleMessage();
+            Console.WriteLine(ir.Content);
+            Debug.WriteLine(ir.Content);
+
             var res = "{\"ass\": \"Holly rart shit Robbin.\"}";
             return Content(res.ToString(), "application/json");
         }

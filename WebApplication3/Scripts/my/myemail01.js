@@ -18,7 +18,7 @@ var mycmd22 = (function() {
     }
 
     function sendShit(src) { 
-        var url = "./letsDoThis";
+        var url = "/api/MyPing"; //"./letsDoThis";
         //alert(src);
 
         //$.getJSON(url, function (data) {
@@ -27,9 +27,16 @@ var mycmd22 = (function() {
         //});
         console.log("get get"); // + result);
 
-        $.getJSON("./letsDoThis", function (result) {
+        var data = {
+            "from": document.getElementById('sendMailFrom').value,
+            "subject": document.getElementById('sendMailSubject').value,
+            "body": document.getElementById('sendMailBody').value,
+            "body2": document.getElementById('sendBody').value
+                    };
+
+        $.getJSON(url, data, function (result) {
             console.log("result", result); // + result);
-            //alert(JSON.stringify(result) );
+            alert("hey F head your wrote:  " + JSON.stringify(result) );
             //$.each(result, function (i, field) {
             //      console.log(field + " ");
             //});

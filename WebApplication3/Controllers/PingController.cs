@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -46,9 +47,10 @@ namespace mvc6.Controllers
 
             results = string.Format("{{ \"query\" :{0}, \"body\" :{1} }}", jaQueryparams, jsonString);
             string yourJson = results; // "{ success: \"true\" }";
+            if (!isValidJson(yourJson)) { Debug.WriteLine(yourJson);  }
 
-            //resp.Content = new StringContent("{}", Encoding.UTF8, "application/json");
-            resp.Content = new StringContent(yourJson, Encoding.UTF8, "application/json");
+                //resp.Content = new StringContent("{\"left\": \"right\"}", Encoding.UTF8, "application/json");
+                resp.Content = new StringContent(yourJson, Encoding.UTF8, "application/json");
 
             return resp; // new HttpResponseMessage(HttpStatusCode.OK);
         }
