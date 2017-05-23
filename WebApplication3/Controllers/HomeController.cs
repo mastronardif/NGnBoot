@@ -40,7 +40,15 @@ namespace WebApplication3.Controllers
             Console.WriteLine(ir.Content);
             Debug.WriteLine(ir.Content);
 
-            var res = "{\"ass\": \"Holly rart shit Robbin.\"}";
+            // FM begin 5/22/17
+            string strJson = string.Empty;
+            myhelpers.MyHelpers.ReadFromApp_Data("~/App_Data/employees.json", ref strJson);
+            //resp.Content = new StringContent(strJson, Encoding.UTF8, "application/json");
+            // Fm end 5/22/17
+
+            //var res = "{\"ass\": \"Holly rart shit Robbin.\"}";
+            var res = strJson;
+
             return Content(res.ToString(), "application/json");
         }
         public ActionResult rootAds(string id)
