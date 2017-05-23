@@ -123,6 +123,12 @@ namespace WebApplication2.Controllers
             resp.Content = new StringContent(yourJson, Encoding.UTF8, "application/json");
             //resp.Content = new StringContent(o, Encoding.UTF8, "application/json");
             //return response;
+            // FM begin 5/22/17
+            string strJson = string.Empty;
+            myhelpers.MyHelpers.ReadFromApp_Data("~/App_Data/employees.json", ref strJson);
+            resp.Content = new StringContent(strJson, Encoding.UTF8, "application/json");
+            // Fm end 5/22/17
+
             return resp; // new HttpResponseMessage(HttpStatusCode.OK);
         }
 
