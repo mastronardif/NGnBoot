@@ -23,6 +23,12 @@ namespace WebApplication3.Controllers
             return View("myhtml");
         }
 
+        public ActionResult mydatatables()
+        {
+            return View("mydatatables");
+        }
+
+
         public ActionResult letsDoThis(string id)
         {
             Debug.WriteLine("id = {0}", id);

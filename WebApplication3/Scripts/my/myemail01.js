@@ -18,7 +18,7 @@ var mycmd22 = (function() {
     }
 
     function sendShit(src) { 
-        var url = "/api/MyPing"; //"./letsDoThis";
+        var url = "/api/MyPing";
         //alert(src);
 
         //$.getJSON(url, function (data) {
