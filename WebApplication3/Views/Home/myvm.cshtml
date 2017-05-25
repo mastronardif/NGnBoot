@@ -1,0 +1,12 @@
+﻿@using WebApplication3.Models;
+@{
+    ViewBag.Title = "myvm";
+}
+my vm
+
+@model MyViewModel
+
+@Html.DropDownListFor(
+    m => m.SelectedSexPreference,
+    new SelectList(Model.SexPreferences, "Value", "Key")
+)

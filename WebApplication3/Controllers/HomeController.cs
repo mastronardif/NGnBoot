@@ -4,12 +4,28 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication3.Models;
 using WebApplication3.Other;
 
 namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Myvm()
+        {
+            var model = new MyViewModel();
+
+            // Set the value that you want to be preselected
+            model.SelectedSexPreference = "S";
+
+            // bind the available values
+            model.SexPreferences.Add("M", "Male");
+            model.SexPreferences.Add("F", "Female");
+            //model.SexPreferences = MemberHandler.SexPreference();
+
+            return View(model);
+        }
+
         public ActionResult Index()
         {
             //return Redirect("./mybootstrap");
