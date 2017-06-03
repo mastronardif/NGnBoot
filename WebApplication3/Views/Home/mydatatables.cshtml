@@ -5,12 +5,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-
-
     
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
-
 
     <style>
         td.details-control {
@@ -20,7 +17,6 @@
 tr.details td.details-control {
     background: url('https://datatables.net/examples/resources/details_close.png') no-repeat center center;
 }
-
     </style>
 
     
@@ -28,59 +24,17 @@ tr.details td.details-control {
     <script type="text/javascript" src="@Url.Content("/Scripts/my/mydatatables.js")"></script>   
     <script type="text/javascript"> myTableUtils.filingUID = "_Model_EntityId";</script> 
         }
-
 </head>
 
 
-
 <form action="/api/MyPing" method="post" >
-
-
-
     <body>
 
-        <table id="example" class="display" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <th></th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                </tr>
-            </tfoot>
-        </table>
-
-        <hr/><hr/>
-        <br/>asdfasdfasdf<br/>
-
         <span id="staticdataTableSPAN" style="color:red"> ddddd </span>
-        <table id="staticdataTable" class="display" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>First name</th>
-                    <th>Last name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                </tr>
-            </thead>
-        </table>
 
-        <hr /><hr />
-        <br />asdfasdfasdf<br />
-        <table id="staticdataTable" class="display nowrap table table-striped table-bordered" cellspacing="10"></table>
+        <table id="staticdataTable" class="display" cellspacing="0" width="100%" border="0">
+        </table>
 
     </body>
 </form>
-
 </html>

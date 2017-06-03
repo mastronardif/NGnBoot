@@ -57,7 +57,14 @@ namespace WebApplication3.Controllers
         public ActionResult GetTableData(string id)
         {
             string strJson = string.Empty;
-            myhelpers.MyHelpers.ReadFromApp_Data("~/App_Data/employees.json", ref strJson);
+            string uri = "~/App_Data/employees.json";
+
+            if (!string.IsNullOrEmpty(id))
+            {
+                uri = string.Format("~/App_Data/{0}.json", id);                    
+            }
+
+            myhelpers.MyHelpers.ReadFromApp_Data(uri, ref strJson);
 
             var res = strJson;
 

@@ -29,20 +29,22 @@ var myTableUtils = {
 
 
 ////////////////////////////////////////
-    function format(d) {
-        return 'Full name: ' + d.first_name + ' ' + d.last_name + '<br>' +
-            'Salary: ' + d.salary + '<br>' +
-            'The child row can contain any data you wish, including links, images, inner tables etc.';
-    }
-
-
 
     $(document).ready(function () {
-        //$.when(staticdataTableUtils.initHeader()).done(function () { staticdataTableUtils.initTable(); });
         $.when(myTableUtils.getHeader()).done(function () {
 
             $(staticdataTableSPAN).html('Hello table = ' + myTableUtils.filingUID);
 
+            var myTable = jQuery("#staticdataTable");
+            var thead = myTable.find("thead");
+            var thRows =  myTable.find("tr:has(th)");
+
+            if (thead.length===0){  //if there is no thead element, add one.
+                thead = jQuery("<thead><tr><th></th><th>FirstNEW</th><th>Last name</th><th>Position</th><th>Office</th></tr></thead>").appendTo(myTable);
+            }
+
+            var copy = thRows.clone(true).appendTo("thead");
+            thRows.remove();
 
             myTableUtils.initTable();
             var url = "/Home/GetTableData/"+myTableUtils.filingUID;
@@ -54,99 +56,13 @@ var myTableUtils = {
                 "order": [[1, 'asc']]
             });
 
-            // Array to track the ids of the details displayed rows
-            var detailRows00 = [];
-
-            $('#staticdataTable tbody').on('click', 'tr td.details-control', function () {
-                var tr = $(this).closest('tr');
-                var row = dt00.row(tr);
-                var idx = $.inArray(tr.attr('id'), detailRows00);
-
-                if (row.child.isShown()) {
-                    tr.removeClass('details');
-                    row.child.hide();
-
-                    // Remove from the 'open' array
-                    detailRows00.splice(idx, 1);
-                }
-                else {
-                    tr.addClass('details');
-                    row.child(format(row.data())).show();
-
-                    // Add to the 'open' array
-                    if (idx === -1) {
-                        detailRows00.push(tr.attr('id'));
-                    }
-                }
+            $('#staticdataTable tbody').on('click', 'tr td.details-control', function () {              
+                var table = $('#staticdataTable').DataTable();
+                var sss = table.cell(this).data();
+                alert("sss = " + "sss.last_name " + sss.last_name + "\n\n" + JSON.stringify(sss) + "\n\n" + JSON.stringify(mycoldata) );
             });
-
-            // On each draw, loop over the `detailRows` array and show any child rows
-            dt00.on('draw', function () {
-                $.each(detailRows00, function (i, id) {
-                    $('#' + id + ' td.details-control').trigger('click');
-                });
-            });
-
-
         });
 
-
-
-
-        //////////////////////////////////////////////
-        /////////////////////////////////////////////
-
-    var dt = $('#example').DataTable({
-        "processing": true,
-        "serverSide": false,
-        "ajax": "/Home/letsDoThis/fu",
-        "columns": [
-            {
-                "class": "details-control",
-                "orderable": false,
-                "data": null,
-                "defaultContent": ""
-            },
-            { "data": "first_name" },
-            { "data": "last_name" },
-            { "data": "position" },
-            { "data": "office" }
-        ],
-        "order": [[1, 'asc']]
-    });
-
-    // Array to track the ids of the details displayed rows
-    var detailRows = [];
-
-    $('#example tbody').on('click', 'tr td.details-control', function () {
-        var tr = $(this).closest('tr');
-        var row = dt.row(tr);
-        var idx = $.inArray(tr.attr('id'), detailRows);
-
-        if (row.child.isShown()) {
-            tr.removeClass('details');
-            row.child.hide();
-
-            // Remove from the 'open' array
-            detailRows.splice(idx, 1);
-        }
-        else {
-            tr.addClass('details');
-            row.child(format(row.data())).show();
-
-            // Add to the 'open' array
-            if (idx === -1) {
-                detailRows.push(tr.attr('id'));
-            }
-        }
-    });
-
-    // On each draw, loop over the `detailRows` array and show any child rows
-    dt.on('draw', function () {
-        $.each(detailRows, function (i, id) {
-            $('#' + id + ' td.details-control').trigger('click');
-        });
-    });
 });
 
 
