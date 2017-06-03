@@ -1,0 +1,12 @@
+[
+	{
+       "class": "details-control",
+       "orderable": false,
+       "data": null,
+       "defaultContent": ""
+    },
+    { "data": "first_name" },
+    { "data": "last_name" },
+    { "data": "position" },
+    { "data": "office" }
+]

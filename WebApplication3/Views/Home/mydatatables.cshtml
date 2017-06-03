@@ -1,10 +1,32 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<script src="~/Scripts/angular.js"></script>
-<script src="~/Scripts/my/myapp.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+
+    
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+
+
+    <style>
+        td.details-control {
+    background: url('https://datatables.net/examples/resources/details_open.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.details td.details-control {
+    background: url('https://datatables.net/examples/resources/details_close.png') no-repeat center center;
+}
+
+    </style>
+
+    
+    @section scripts{
+    <script type="text/javascript" src="@Url.Content("/Scripts/my/mydatatables.js")"></script>    
+        }
 
 </head>
 
@@ -12,38 +34,34 @@
 
 <form action="/api/MyPing" method="post" >
 
-    <script>
-    $(document).ready(function () {
-    $('#example').DataTable( {
-        "ajax": '/Home/letsDoThis/fu'
-    } );
-} );
-    </script>
+
 
     <body>
 
         <table id="example" class="display" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th></th>
+                    <th>First name</th>
+                    <th>Last name</th>
                     <th>Position</th>
                     <th>Office</th>
-                    <th>Extn.</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
                 </tr>
             </thead>
             <tfoot>
                 <tr>
-                    <th>Name</th>
+                    <th></th>
+                    <th>First name</th>
+                    <th>Last name</th>
                     <th>Position</th>
                     <th>Office</th>
-                    <th>Extn.</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
                 </tr>
             </tfoot>
         </table>
+
+        <br/>asdfasdfasdf<br//>
+        <table id="staticdataTable" class="display nowrap table table-striped table-bordered" cellspacing="10"></table>
+
     </body>
 </form>
 

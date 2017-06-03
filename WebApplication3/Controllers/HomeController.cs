@@ -44,6 +44,26 @@ namespace WebApplication3.Controllers
             return View("mydatatables");
         }
 
+        public ActionResult GetTableColumns(string id)
+        {
+            string strJson = string.Empty;
+            myhelpers.MyHelpers.ReadFromApp_Data("~/App_Data/coldefs.json", ref strJson);
+
+            var res = strJson;
+
+            return Content(res.ToString(), "application/json");
+        }
+
+        public ActionResult GetTableData(string id)
+        {
+            string strJson = string.Empty;
+            myhelpers.MyHelpers.ReadFromApp_Data("~/App_Data/tabledata.json", ref strJson);
+
+            var res = strJson;
+
+            return Content(res.ToString(), "application/json");
+        }
+
 
         public ActionResult letsDoThis(string id)
         {
@@ -58,9 +78,9 @@ namespace WebApplication3.Controllers
             //var result = new FilePathResult("~/Views/Home/indexemail.html", "text/html");
             //return "Holly rart shit Robbin."//result;
 
-            RestSharp.IRestResponse ir = MyMail.SendSimpleMessage();
-            Console.WriteLine(ir.Content);
-            Debug.WriteLine(ir.Content);
+            //RestSharp.IRestResponse ir = MyMail.SendSimpleMessage();
+            //Console.WriteLine(ir.Content);
+            //Debug.WriteLine(ir.Content);
 
             // FM begin 5/22/17
             string strJson = string.Empty;
