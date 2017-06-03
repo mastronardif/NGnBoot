@@ -22,9 +22,23 @@ var myTableUtils = {
             type: "POST"
         });
     },
-    initTable: function () {
+    initTable: function () { },
 
+    buildSetTableHeader: function () {
+        console.log("mycoldata \n" + JSON.stringify(mycoldata));
+        //mycoldat.data
+        var trs = "";
+        for (var j = 1; j < mycoldata.length; j++) {
+            var label = mycoldata[j].data
+            trs += "<th>"+ label +"</th>";
+        }
+        // empty for the fist col which is an edit button in this case.
+        var thead = "<thead><tr><th></th>" + trs + "</tr></thead>";
+        //console.log(theadZZ);
+        //var thead = "<thead><tr><th></th><th>FirstTwoNEW</th><th>Last name</th><th>Position</th><th>Office</th></tr></thead>";
+        return thead;
     }
+
 };
 
 
@@ -39,8 +53,10 @@ var myTableUtils = {
             var thead = myTable.find("thead");
             var thRows =  myTable.find("tr:has(th)");
 
-            if (thead.length===0){  //if there is no thead element, add one.
-                thead = jQuery("<thead><tr><th></th><th>FirstNEW</th><th>Last name</th><th>Position</th><th>Office</th></tr></thead>").appendTo(myTable);
+            if (thead.length === 0) {  //if there is no thead element, add one.
+                var thehead = myTableUtils.buildSetTableHeader();
+                thead = jQuery(thehead).appendTo(myTable);
+                //jQuery("<thead><tr><th></th><th>FirstNEW</th><th>Last name</th><th>Position</th><th>Office</th></tr></thead>").appendTo(myTable);
             }
 
             var copy = thRows.clone(true).appendTo("thead");
