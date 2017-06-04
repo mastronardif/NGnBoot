@@ -1,0 +1,26 @@
+[
+    {
+        "data": "DepartmentID",
+        "title": "DepartmentID",
+        "width": "100%",
+        "visible": true
+    },
+    {
+        "data": "Name",
+        "title": "Name",
+        "width": "100%",
+        "visible": true
+    },
+    {
+        "data": "GroupName",
+        "title": "GroupName",
+        "width": "100%",
+        "visible": true
+    },
+    {
+        "data": "ModifiedDate",
+        "title": "ModifiedDate",
+        "width": "100%",
+        "visible": true
+    }
+]

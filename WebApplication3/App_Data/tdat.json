@@ -1,0 +1,20 @@
+{
+    "draw": 1,
+    "recordsTotal": 0,
+    "recordsFiltered": 0,
+    "error": "",
+    "data": [
+        {
+            "DepartmentID": 1,
+            "Name": "Engineering",
+            "GroupName": "Research and Development",
+            "ModifiedDate": "/Date(1022904000000)/"
+        },
+        {
+            "DepartmentID": 2,
+            "Name": "Tool Design",
+            "GroupName": "Research and Development",
+            "ModifiedDate": "/Date(1022904000000)/"
+        }
+    ]
+}

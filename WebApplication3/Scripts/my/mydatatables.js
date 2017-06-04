@@ -11,7 +11,15 @@ var myTableUtils = {
             url: '/Home/GetTableColumns',
             success: function (data) {
                 console.log(JSON.stringify(data));
+                var specific = {
+                    "class": "details-control",
+                    "orderable": false,
+                    "data": null,
+                    "defaultContent": ""
+                };
+                var data2 = data.unshift(specific);
                 mycoldata = data;
+                console.log(JSON.stringify(mycoldata));
             },
             data: {
                 id: myTableUtils.filingUID
@@ -38,7 +46,6 @@ var myTableUtils = {
         //var thead = "<thead><tr><th></th><th>FirstTwoNEW</th><th>Last name</th><th>Position</th><th>Office</th></tr></thead>";
         return thead;
     }
-
 };
 
 

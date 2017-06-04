@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication3.Helpers;
 using WebApplication3.Models;
 using WebApplication3.Other;
 
@@ -44,31 +45,86 @@ namespace WebApplication3.Controllers
             return View("mydatatables");
         }
 
+        // suppoert for datatable BEGIN
+
         public ActionResult GetTableColumns(string id)
         {
-            string strJson = string.Empty;
-            myhelpers.MyHelpers.ReadFromApp_Data("~/App_Data/coldefs.json", ref strJson);
+            if (false)
+            {
+                string strJson = string.Empty;
+                id = "coldefs"; // "coldefs";"tcols";
+                string uri = string.Format("~/App_Data/{0}.json", id);
 
-            var res = strJson;
+                myhelpers.MyHelpers.ReadFromApp_Data(uri, ref strJson);
+                var res = strJson;
+                return Content(res.ToString(), "application/json");
+            }
+            if (true)
+            {
+                StaticDataModel model = null;
+                List<DatatableHeaderDefinition> tableData = new List<DatatableHeaderDefinition>();
+                JsonResult result = new JsonResult();
+                try
+                {
+                    string fn = HttpContext.Server.MapPath("~/App_Data/test.serial.dat");
+                    model = new StaticDataModel(fn);
 
-            return Content(res.ToString(), "application/json");
+                    tableData = model.helperGetColDefs(); // (model.EntityTablesEditableFields); //FillingTableUtils.GetFilingTableHeader(filingParams);
+                    //result = Json(tableData);
+                    result = Json(tableData, JsonRequestBehavior.AllowGet);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex);
+                    throw;
+                }
+                return result;
+            }
+
         }
+
 
         public ActionResult GetTableData(string id)
         {
-            string strJson = string.Empty;
-            string uri = "~/App_Data/employees.json";
-
-            if (!string.IsNullOrEmpty(id))
+            if (false)
             {
-                uri = string.Format("~/App_Data/{0}.json", id);                    
+                string strJson = string.Empty;
+                string uri = string.Empty; // = "~/App_Data/employees.json";
+                if (!string.IsNullOrEmpty(id))
+                {
+                    id = "employees"; // "tdat";
+                    uri = string.Format("~/App_Data/{0}.json", id);
+                }
+                myhelpers.MyHelpers.ReadFromApp_Data(uri, ref strJson);
+                var res = strJson;
+                return Content(res.ToString(), "application/json");
             }
 
-            myhelpers.MyHelpers.ReadFromApp_Data(uri, ref strJson);
+            if (true)
+            { 
+            StaticDataModel model = null;
+            List<Dictionary<string, object>> tableData = new List<Dictionary<string, object>>();
+            JsonResult result = new JsonResult();
+            try
+            {
+                string fn = HttpContext.Server.MapPath("~/App_Data/test.serial.dat");
+                model = new StaticDataModel(fn);
 
-            var res = strJson;
+                tableData = model.helperGetTableData(); // (model.EntityTablesEditableFields); //FillingTableUtils.GetFilingTableHeader(filingParams);
+                DataTableResponse resp = new DataTableResponse();
+                resp.data = tableData;
 
-            return Content(res.ToString(), "application/json");
+                result = Json(resp, JsonRequestBehavior.AllowGet);
+                result.MaxJsonLength = Int32.MaxValue;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                throw;
+            }
+            return result;
+            //return Json(data, JsonRequestBehavior.AllowGet)
+            }
         }
 
 

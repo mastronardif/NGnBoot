@@ -217,10 +217,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DatatableHeaderDefinition.cs" />
+    <Compile Include="Helpers\DataTableResponse.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\HomeMyvmModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\StaticDataModel.cs" />
     <Compile Include="Other\Action1DebugActionWebApiFilter.cs" />
     <Compile Include="Other\Interface1.cs" />
     <Compile Include="Other\MyError.cs" />
