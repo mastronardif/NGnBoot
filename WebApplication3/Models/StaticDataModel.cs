@@ -11,7 +11,7 @@ namespace WebApplication3.Models
 {
     public class StaticDataModel
     {
-        private DataTable dtTable { get; set; }
+        public DataTable dtTable { get; set; }
 
         public StaticDataModel(string id)
         {

@@ -1,15 +1,120 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Web;
 
 namespace WebApplication3.Helpers
 {
     public class Helpers
     {
+        public static string DataTableRowbyColsHTML_Table(DataTable dt, int row)
+        {
+            if (dt.Rows.Count == 0) return ""; // enter code here
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append("<html>");
+            builder.Append("<head>");
+            builder.Append("<title>");
+            builder.Append("Page-");
+            builder.Append(Guid.NewGuid());
+            builder.Append("</title>");
+            builder.Append("</head>");
+            builder.Append("<body>");
+            builder.Append("<table border='1px' cellpadding='5' cellspacing='0' ");
+            builder.Append("style='border: solid 1px Silver; font-size: x-small;'>");
+            builder.Append("<tr align='left' valign='top'>");
+
+            string [] labels = { "Label", "old", "new" };
+            foreach (var c in  labels)
+            {
+                builder.Append("<td align='left' valign='top'><b>");
+                builder.Append(c);
+                builder.Append("</b></td>");
+            }
+            builder.Append("</tr>");
+
+            DataRow r = dt.Rows[row];
+            {
+                
+                foreach (DataColumn c in dt.Columns)
+                {
+                    builder.Append("<tr align='left' valign='top'>");
+
+                    // Name
+                    builder.Append("<td align='left' valign='top'><b>");
+                    builder.Append(c.ColumnName);
+                    builder.Append("</b></td>");
+
+                    // Old value
+                    builder.Append("<td align='left' valign='top'>");
+                    builder.Append(r[c.ColumnName]);
+                    builder.Append("</td>");
+
+                    //new entry
+                    builder.Append("<td align='left' valign='top'><b>");
+                    builder.Append("enter new");
+                    builder.Append("</b></td>");
+
+                    builder.Append("</tr>");
+                }
+                
+            }
+
+            builder.Append("</table>");
+            builder.Append("</body>");
+            builder.Append("</html>");
+
+            return builder.ToString();
+        }
+
+        public static string DataTabletoHTML_Table(DataTable dt, int row)
+        {
+            if (dt.Rows.Count == 0) return ""; // enter code here
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append("<html>");
+            builder.Append("<head>");
+            builder.Append("<title>");
+            builder.Append("Page-");
+            builder.Append(Guid.NewGuid());
+            builder.Append("</title>");
+            builder.Append("</head>");
+            builder.Append("<body>");
+            builder.Append("<table border='1px' cellpadding='5' cellspacing='0' ");
+            builder.Append("style='border: solid 1px Silver; font-size: x-small;'>");
+            builder.Append("<tr align='left' valign='top'>");
+            foreach (DataColumn c in dt.Columns)
+            {
+                builder.Append("<td align='left' valign='top'><b>");
+                builder.Append(c.ColumnName);
+                builder.Append("</b></td>");
+            }
+            builder.Append("</tr>");
+            //foreach (DataRow r in dt.Rows)            
+            DataRow r = dt.Rows[row];
+            {
+                builder.Append("<tr align='left' valign='top'>");
+                foreach (DataColumn c in dt.Columns)
+                {
+                    builder.Append("<td align='left' valign='top'>");
+                    builder.Append(r[c.ColumnName]);
+                    builder.Append("</td>");
+                }
+                builder.Append("</tr>");
+            }
+            builder.Append("</table>");
+            builder.Append("</body>");
+            builder.Append("</html>");
+
+            return builder.ToString();
+        }
+
+
         //static DataSet DeSerialize(byte[] content)
         public static object DeSerialize(byte[] content)
         {

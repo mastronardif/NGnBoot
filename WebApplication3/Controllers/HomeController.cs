@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
@@ -125,6 +126,39 @@ namespace WebApplication3.Controllers
             return result;
             //return Json(data, JsonRequestBehavior.AllowGet)
             }
+        }
+
+        public ActionResult Index2detail(string id, string id2)
+        {
+            StaticDataModel model = null;
+            //List<DatatableHeaderDefinition> tableData = new List<DatatableHeaderDefinition>();
+            string retval = string.Empty;
+            try
+            {
+                string fn = HttpContext.Server.MapPath("~/App_Data/test.serial.dat");
+                model = new StaticDataModel(fn);
+
+                //model.dtTable;
+                List<Dictionary<string, object>> rows = new List<Dictionary<string, object>>();
+                rows = model.helperGetTableData();
+                //tableData = model.helperGetColDefs(); 
+                var first = rows[0];
+                var cols = first.First().Value;
+                //first.Values;
+                //DataColumnCollection cols = (DataColumnCollection)rows.First().Values;
+
+                //string html = Helpers.Helpers.DataTabletoHTML_Table( model.dtTable, 0);
+                string html = Helpers.Helpers.DataTableRowbyColsHTML_Table(model.dtTable, 0);
+                retval = html;
+                //retval = Json(rows[0].Values, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                throw;
+            }
+
+            return Content(retval);
         }
 
 

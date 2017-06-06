@@ -82,10 +82,26 @@ var myTableUtils = {
             $('#staticdataTable tbody').on('click', 'tr td.details-control', function () {              
                 var table = $('#staticdataTable').DataTable();
                 var sss = table.cell(this).data();
-                alert("sss = " + "sss.last_name " + sss.last_name + "\n\n" + JSON.stringify(sss) + "\n\n" + JSON.stringify(mycoldata) );
+                //alert("sss = " + "sss.last_name " + sss.last_name + "\n\n" + JSON.stringify(sss) + "\n\n" + JSON.stringify(mycoldata));
+                javascript:myPopup(sss);
             });
         });
 
 });
 
+    function myPopup(sss) {
+    //var myWindow = window.open("", "_self");
+    myWindow = window.open("", "myWindow", "width=400,height=500");
+    //var table = $('#staticdataTable').DataTable();
+    //var sss = table.cell(this).data();
+    //alert("sss = " + "sss.last_name " + sss.last_name + "\n\n" + JSON.stringify(sss) + "\n\n" + JSON.stringify(mycoldata));
 
+    myWindow.document.write("<p> update _______.</p>");
+    myWindow.document.write(sss.BusinessEntityID + "\n\n" + sss.LastName + "\n");
+
+    myWindow.document.write("<hr/>");
+    myWindow.document.write(JSON.stringify(sss) + "\n\n")
+
+    myWindow.document.write("<hr/><hr/>");
+    myWindow.document.write(JSON.stringify(mycoldata));
+}
