@@ -12,6 +12,28 @@ namespace WebApplication3.Helpers
 {
     public class Helpers
     {
+        public static string DictionaryToHTML_Selection(string fieldID, Dictionary<int, string> dict, int selKey)
+        {
+            StringBuilder builder = new StringBuilder();
+            string retval = string.Empty;
+            string selection = string.Format("<select id=\"{0}\">\n", fieldID);
+            builder.Append(selection); 
+
+            foreach (KeyValuePair<int, string> entry in dict)
+            {
+                // do something with entry.Value or entry.Key
+                string option = string.Format("<option value = \"{0}\"{2}> {1} </option>\n", 
+                                              entry.Key, entry.Value, (entry.Key == selKey) ? "selected": "");
+                // if key match add select option 
+
+                builder.Append(option);
+            }
+            
+            builder.Append("</select>\n");
+
+            return builder.ToString(); ;
+        }
+
         public static string DataTableRowbyColsHTML_Table(DataTable dt, int row)
         {
             if (dt.Rows.Count == 0) return ""; // enter code here

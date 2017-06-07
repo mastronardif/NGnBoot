@@ -135,6 +135,16 @@ namespace WebApplication3.Controllers
             string retval = string.Empty;
             try
             {
+                Dictionary<int, string> myDict = new Dictionary<int, string>
+                {
+                    { 1, "value1" },
+                    { 2, "value2" },
+                    { 3, "value3" },
+                    { 4, "value4" }
+                };
+                retval = Helpers.Helpers.DictionaryToHTML_Selection("idseltest", myDict, 3);
+                return Content(retval);
+
                 string fn = HttpContext.Server.MapPath("~/App_Data/test.serial.dat");
                 model = new StaticDataModel(fn);
 
