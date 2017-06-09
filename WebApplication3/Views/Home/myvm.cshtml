@@ -10,3 +10,32 @@ my vm
     m => m.SelectedSexPreference,
     new SelectList(Model.SexPreferences, "Value", "Key")
 )
+
+<hr/>
+display html helpers <br/>
+
+ole school <br/>
+<table border="1" style="background-color:antiquewhite">
+@foreach (var kvp in @Model.employees)
+{
+    <tr>
+    <td>@kvp.Key  </td> 
+    <td>@kvp.Value.name </td>
+    </tr>
+}
+</table>
+
+for<br/>
+@Html.TextBox("StudentName", Model.employees.First().Value.name, new { @class = "form-contol"})
+<br/>
+@Html.TextBoxFor(x => x.employees.First().Value.name,
+                                       new { @Name = "Model.employees.name" })
+<br />
+@Html.TextBoxFor(x => x.employees.Last().Value.name, new { @class = "form-contol" })
+
+
+
+
+
+
+
