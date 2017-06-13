@@ -1,8 +1,10 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication3.Helpers;
@@ -47,6 +49,38 @@ namespace WebApplication3.Controllers
         }
 
         // suppoert for datatable BEGIN
+
+        public JsonResult GetAds(string id)
+        {           
+            //string content = string.Empty;
+            
+            JsonResult result = new JsonResult();
+            try
+            {
+                MyViewModel model = new MyViewModel();
+                var users = model.GetUsers();
+
+                //var client = new RestClient("http://localhost:3000/");
+                //var request = new RestRequest("db", Method.GET);
+
+                //IRestResponse response = client.Execute(request);
+                //response.ContentType = "application/json";
+
+                //var content = response.Content; // raw content as string
+                //content = "{'LEFT': 'right' }";                
+
+                return(Json(users, JsonRequestBehavior.AllowGet));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                throw;
+            }
+            return Json("ot oh!", JsonRequestBehavior.AllowGet);
+            //return Json(result.Data, JsonRequestBehavior.AllowGet);
+            //return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
 
         public ActionResult GetTableColumns(string id)
         {

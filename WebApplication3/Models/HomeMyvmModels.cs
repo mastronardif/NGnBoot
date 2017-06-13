@@ -9,6 +9,13 @@ namespace WebApplication3.Models
         public double salary { get; set; }
     }
 
+    public class UserModel
+    {
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public string Company { get; set; }
+    }
+
     public class MyViewModel
     {
         public string SelectedSexPreference { get; set; }
@@ -30,8 +37,33 @@ namespace WebApplication3.Models
                 { 1002, new Employee{ name="Fred", age=33, salary=124.123}},
                 { 1003, new Employee{ name="Ann",  age=33, salary=125.123}}
             };
+        }
 
+        public List<UserModel> GetUsers()
+        {
+            var usersList = new List<UserModel>
+            {
+                new UserModel
+                {
+                    UserId = 1,
+                    UserName = "Ram",
+                    Company = "Mindfire Solutions"
+                },
+                new UserModel
+                {
+                    UserId = 1,
+                    UserName = "chand",
+                    Company = "Mindfire Solutions"
+                },
+                new UserModel
+                {
+                    UserId = 1,
+                    UserName = "Abc",
+                    Company = "Abc Solutions"
+                }
+            };
 
+            return usersList;
         }
 
     }
