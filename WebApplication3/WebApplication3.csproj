@@ -304,6 +304,13 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="App_Data\employees.json" />
+    <Content Include="App_Data\array_employees.json" />
+    <Content Include="App_Data\coldefs.json" />
+    <Content Include="App_Data\tabledata.json" />
+    <Content Include="App_Data\tcols.json" />
+    <Content Include="App_Data\tdat.json" />
+    <Content Include="App_Data\test.serial.dat" />
+    <Content Include="App_Data\_Model_EntityId.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
