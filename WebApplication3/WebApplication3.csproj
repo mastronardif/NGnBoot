@@ -1064,12 +1064,16 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\my\cat_list.html" />
+    <Content Include="Scripts\my\controlers\mycontroller01.js" />
     <Content Include="Scripts\my\my.js" />
     <Content Include="Scripts\my\myapp.js" />
     <Content Include="Scripts\my\mydatatables.js" />
+    <Content Include="Scripts\my\mydirective.js" />
     <Content Include="Scripts\my\myemail01.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Static\cat_list.html" />
     <Content Include="Static\HtmlPage1.html" />
     <Content Include="Views\Home\basic.html" />
     <Content Include="Views\Home\homelessad.html" />
