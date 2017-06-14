@@ -15,9 +15,24 @@ namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
+        MyViewModel _model = new MyViewModel();
+
+        public HomeController()
+        {
+            // Session Begin            
+            //MyViewModel _model = new MyViewModel();
+            //Session["users"] = model.GetUsers();
+            // Session End
+        }
+
+
         public ActionResult Myvm()
         {
+            Session["users"] = _model.GetUsers();
+
             var model = new MyViewModel();
+            ViewData["vd01"] = "vew data :)";
+            ViewBag.thename = "Bob Jones";
 
             // Set the value that you want to be preselected
             model.SelectedSexPreference = "S";

@@ -3,19 +3,27 @@
 <head>
 <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/my/myapp.js"></script>
-    <script src="~/Scripts/my/myemail01.js"></script>
+    <script src="~/Scripts/my/mydirective.js"></script>
 </head>
 
 <div ng-controller="myappCtrl">
 
     <span ng-model="name"> {{name}}
-
-
     </span>
 
     <button class="btn btn-primary" id="SaveButton" ng-click="save()">Save</button>
 
+    <div ng-repeat="n in ads">
+        <li>{{n.UserName}} </li>
+    </div>
+
+    <div useful-directive></div>
+
 </div>
+<input ng-model="catName" />{{catName}}
+<hr />
+directive 2 <br/>
+<cat-list>hello from the DOM</cat-list>
 
 
 </html>
