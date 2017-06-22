@@ -38,6 +38,16 @@
                             </ul>
                         </li>
 
+                    <li>
+                        <select class="form-control" id="AdCampaigns" onchange="location = this.options[this.selectedIndex].value;">
+                            <option selected="selected" value="/Home/rootAds">select Campaign</option>
+                            <option value="/Home/rootAds">5-9</option>
+                            <option value="/Home/rootAds">rootAds</option>
+                            <option value="/Home/rootAds">16-20</option>
+                            <option value="/Home/rootAds">20+</option>
+                        </select>
+                    </li>
+
                     <li>@Html.ActionLink("html", "myhtml", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("datatables", "mydatatables", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
@@ -65,6 +75,11 @@
 <script type="text/javascript">
   $(document).ready(function() {
       //alert("hello world");
+      $('#AdCampaigns').change(function () {
+          //alert($(this).val());
+          //var selectedText = $(this).find("option:selected").value();
+          //console.log(selectedText);
+      });
 
       $(".dropdown-menu li a").click(function () {
           console.log('wtf');
