@@ -25,6 +25,7 @@
                     <li>@Html.ActionLink("vwModel", "myvm", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Ad Exchange", "rootAds", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("h Ads", "homelessAds", "Home", new { area = "" }, null)</li>
+                    <!-- 
                     <li>
                         <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">Select a Campaign <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -37,14 +38,13 @@
                                 <li><a href="#">Other</a></li>
                             </ul>
                         </li>
-
+                        -->
                     <li>
                         <select class="form-control" id="AdCampaigns" onchange="location = this.options[this.selectedIndex].value;">
                             <option selected="selected" value="/Home/rootAds">select Campaign</option>
-                            <option value="/Home/rootAds">5-9</option>
                             <option value="/Home/rootAds">rootAds</option>
-                            <option value="/Home/rootAds">16-20</option>
-                            <option value="/Home/rootAds">20+</option>
+                            <option value="/Home/rootAds">Homeless Ads</option>
+                            <option value="/Home/rootAds">Stickers</option>
                         </select>
                     </li>
 
