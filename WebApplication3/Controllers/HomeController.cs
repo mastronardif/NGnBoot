@@ -55,8 +55,8 @@ namespace WebApplication3.Controllers
 
         public ActionResult myhtml()
         {
-            //return View("myhtml");
-            return View("mydatatables");
+            return View("myhtml");
+            //return View("mydatatables");
         }
 
         public ActionResult mydatatables()
