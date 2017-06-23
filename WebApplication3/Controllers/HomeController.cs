@@ -56,7 +56,8 @@ namespace WebApplication3.Controllers
         public ActionResult myhtml()
         {
             //throw new DivideByZeroException();
-            return View("myhtml");
+            return View("wtf");
+            // return View("myhtml");
             //return View("mydatatables");
         }
 

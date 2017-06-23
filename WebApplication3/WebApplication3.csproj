@@ -1101,6 +1101,7 @@
     <Content Include="Views\Home\mydatatables.cshtml" />
     <Content Include="Views\Home\myvm.cshtml" />
     <None Include="Views\Home\myhtml.cshtml" />
+    <Content Include="Views\Home\wtf.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\mycss\" />
