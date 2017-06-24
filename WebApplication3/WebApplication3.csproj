@@ -1076,6 +1076,8 @@
     <Content Include="Static\cat_list.html" />
     <Content Include="Static\HtmlPage1.html" />
     <Content Include="Views\Home\basic.html" />
+    <Content Include="Views\Home\carad.html" />
+    <Content Include="Views\Home\carads.html" />
     <Content Include="Views\Home\homelessad.html" />
     <Content Include="Views\Home\indexemail.html" />
     <Content Include="Views\Home\marketing.html" />

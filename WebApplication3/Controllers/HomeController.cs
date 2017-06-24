@@ -260,6 +260,12 @@ namespace WebApplication3.Controllers
             {
                 fn = id+".html";
             }
+            if (string.CompareOrdinal("carads", id) ==0)
+            {
+                fn = id + ".html";
+                //return Redirect("/Home/rootAds/indexemail");
+            }
+
             var url = string.Format("~/Views/Home/{0}", fn);
             var result = new FilePathResult(url, "text/html");
             //var result = new FilePathResult("~/Views/Home/indexemail.html", "text/html");
