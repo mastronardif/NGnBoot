@@ -43,10 +43,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
     </a>
 
       <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" id="FU_SPONSORHL"
-             onclick="openMailFromServer22('CARAD_SPONSOR');w3_close();">
+             onclick="openMailFromServer22('CARAD_SWARM');w3_close();">
       <div class="w3-container">
-        <img class="w3-round w3-margin-right" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTWljLJnING2Ob4Knol6-91VsSJ7xtYEe7D3eLwbvsqirYaYBLmQ" style="width:15%;">
-          <span class="w3-opacity w3-large">Big City</span>
+        <img class="w3-round w3-margin-right" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBx5jjywW_VlyPiPS6a-o4-iHjXE1SqUFTkf350swZL6u4uEge" style="width:15%;">
+          <span class="w3-opacity w3-large">Swarm Campaigns</span>
         <p>Sponsor a car</p>
       </div>
     </a>
@@ -55,7 +55,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "RobotoDraft", "Roboto", sans-serif;}
              onclick="openMailFromServer22('CARAD');w3_close();">
       <div class="w3-container">
         <img class="w3-round w3-margin-right" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQKVPqim4a7ydSjAsQd18sBOA8ZxAHQh1RzcLWKfAW0W1oQg_h" style="width:15%;">
-          <span class="w3-opacity w3-large">NYC</span>
+          <span class="w3-opacity w3-large">Westfield Area</span>
         <p>Car Billboards!</p>
       </div>
     </a>
@@ -175,14 +175,14 @@ function myFunc(id) {
 
 function openMailFromServer22(id) {
   var srcIds = [{"name": "name", "id" : "", "path": ""}, 
-                { "name": "Marketing", "id": "CARAD_MARKETING", "path": "./rootAds/marketing"},                
-                { "name": "Basic", "id": "CARAD", "path": "./rootAds/carad" },
-                { "name": "Basic", "id": "FU_BASIC", "path": "./rootAds/basic" },
+                { "name": "Marketing", "id": "CARAD_MARKETING", "path": "./rootAds/caradmarketing"},                
+                {"name": "Basic", "id": "CARAD", "path": "./rootAds/carad" },
+                //{ "name": "Basic", "id": "FU_BASIC", "path": "./rootAds/basic" },
       
-                { "name": "Basic", "id": "CARAD_SPONSOR", "path": "./rootAds/sponsoranhl" },
+                { "name": "Basic", "id": "CARAD_SWARM", "path": "./rootAds/caradswarm" },
 //{ "name": "Basic", "id": "FU", "path": "./rootAds/carad" },
-                { "name": "whoweare", "id": "FU_WHOWEARE", "path": "./rootAds/whoweare" },
-                {"name": "Won Ton Delivery", "id": "FU_WONTONDELIVERY", "path": "./index.html"}
+                { "name": "whoweare", "id": "FU_WHOWEARE", "path": "./rootAds/whoweare" }
+//                {"name": "Won Ton Delivery", "id": "FU_WONTONDELIVERY", "path": "./index.html"}
                ];
 
     var divId = 'FU_';   
